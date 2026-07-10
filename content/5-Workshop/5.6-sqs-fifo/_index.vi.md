@@ -179,7 +179,7 @@ Handler pattern (services/sqs-consumer-economy/src/lambda.ts):
 
 ```typescript
 export const handler = async (event: SQSEvent): Promise<SQSBatchResponse> => {
-  if (!initialized) {            
+  if (!initialized) {          
     await initializeApplicationDbContext();
     initialized = true;
   }
@@ -187,7 +187,7 @@ export const handler = async (event: SQSEvent): Promise<SQSBatchResponse> => {
   for (const record of event.Records) {
     try {
       const message: SQSMessage = JSON.parse(record.body);
-      switch (message.type) {    
+      switch (message.type) {  
         case 'economy.earn':
           await handleEarnCurrency(message.payload);
           break;
@@ -297,7 +297,7 @@ done
 
 SequenceNumber tăng dần theo thứ tự xử lý từ nhỏ nhất tới lớn nhất:
 
-Message amount=20 → 18903297315744239872 
+Message amount=20 → 18903297315744239872
 
 Message amount=30 → 18903297315816687872
 

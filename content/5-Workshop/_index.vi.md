@@ -29,5 +29,5 @@ Hệ thống phân tách luồng dữ liệu và xử lý thành hai mô hình c
 4. [Kiến trúc dự án](5.4-architecture-overview/)
 5. [Khởi tạo Amazon API Gateway](5.5-API-Gateway/)
 6. [Amazon SQS FIFO](5.6-sqs-fifo/)
-7. [AWS SQS Dead Letter Queue](5.7-sqs-dlq/)
+7. [AWS DLQ & AWS CloudWatch](5.7-sqs-dlq/)
 
