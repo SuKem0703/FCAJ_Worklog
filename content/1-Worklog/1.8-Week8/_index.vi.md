@@ -1,59 +1,33 @@
 ---
 title: "Worklog Tuần 8"
-date: 2024-01-01
+date: 2026-06-22
 weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm hiểu sâu về các tác vụ bảo trì cơ sở dữ liệu quan hệ (PostgreSQL/Aurora) với lệnh `VACUUM` và `ANALYZE`.
+* Nắm vững kỹ thuật can thiệp vào tầng API Gateway để đóng/mở cổng giao tiếp linh hoạt bằng Stage Variables.
+* Xác định và thiết kế luồng Bảo trì hệ thống tự động làm tính năng đặc biệt cho dự án.
+* Hoàn thiện và đối chiếu toàn bộ sơ đồ hệ thống cuối cùng.
+* Tổng duyệt lại kiến trúc và lập kế hoạch triển khai cụ thể, phân công công việc từng nhóm chức năng cho các thành viên.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ               | Công việc                                                                                                                                                                                                                                                                                                                                                                                                                           | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------ | ----------------- |
+| 2                  | - Tìm hiểu DB Maintenance:<br />+ Lệnh `VACUUM`: dọn dẹp dead tuples.<br />+ Lệnh `ANALYZE`: cập nhật statistics cho query planner.<br />- Tìm hiểu API Gateway: Cách dùng SDK để update `stageVariables`, điều hướng traffic sang trang bảo trì hoặc trả về mã lỗi 503 khi cần thiết.                                                                                                          | 22/06/2026       | 22/06/2026         |                   |
+| 3                  | - Hoàn thiện, thống nhất và review sơ đồ kiến trúc.<br />- Lập kế hoạch: Phân tách hệ thống thành các module nhỏ, chia nhóm triển khai và phân công nhiệm vụ cụ thể cho từng thành viên.                                                                                                                                                                                                           | 23/06/2026       | 23/06/2026         |                   |
+| 4 - 5 - 6 - 7 - CN | - Triển khai và viết báo cáo step by step cho:<br />+ Hạ tầng cơ sở: IAM Role, chính sách, tính toán chi phí thực tế với trường hợp tiêu cực nhất, thiết lập hạn mức quản lý chi phí bằng AWS Budget.<br />+ Lớp biên mạng: triển khai nhanh CloudFront, WAF bằng CloudFormation (tại Mỹ).<br />+ Cơ sở dữ liệu: AuroraSQL, triển khai nhanh AWS Backup với AWS S3 bằng CloudFormation. | 24/06/2026       | 28/06/2026         |                   |
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Nắm vững cơ chế bảo trì cơ sở dữ liệu (Aurora/PostgreSQL) thông qua lệnh `VACUUM` để dọn dẹp dữ liệu thừa và `ANALYZE` để tối ưu hóa trình lên kế hoạch truy vấn.
+* Tìm hiểu cách sử dụng SDK để can thiệp vào API Gateway, linh hoạt cập nhật `stageVariables` nhằm tự động điều hướng traffic sang luồng bảo trì hoặc ngắt kết nối để bảo vệ hệ thống.
+* Hoàn thiện, review và thống nhất được sơ đồ kiến trúc hệ thống tổng thể cuối cùng, đảm bảo tính liên kết chặt chẽ giữa các thành phần.
+* Lập thành công kế hoạch triển khai chi tiết: phân rã hệ thống thành các module nhỏ, chia nhóm và phân công nhiệm vụ rõ ràng cho từng thành viên trong dự án.
+* Hoàn thành triển khai thực tế và viết báo cáo hướng dẫn cho các hạng mục nền tảng:
+  * Hạ tầng cơ sở: Khởi tạo thành công IAM Role, các chính sách bảo mật, tính toán rủi ro chi phí thực tế cho kịch bản tiêu cực nhất và cấu hình cảnh báo an toàn qua AWS Budget.
+  * Lớp biên mạng: Ứng dụng CloudFormation để triển khai nhanh chóng hệ thống phân phối CloudFront và tường lửa WAF tại khu vực Mỹ.
+  * Cơ sở dữ liệu & Lưu trữ: Khởi tạo AuroraSQL và thiết lập thành công tự động hóa sao lưu dữ liệu sang Amazon S3 thông qua AWS Backup bằng script CloudFormation.

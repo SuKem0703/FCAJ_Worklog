@@ -1,59 +1,33 @@
 ---
 title: "Worklog Tuần 4"
-date: 2024-01-01
+date: 2026-06-25
 weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-
 ### Mục tiêu tuần 4:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu và nắm bắt các khái niệm về kiến trúc Serverless trên nền tảng AWS.
+* Làm quen và thực hành với AWS Lambda cùng các dịch vụ cơ sở dữ liệu Serverless (DynamoDB, Aurora).
+* Khám phá các dịch vụ thuộc lớp biên mạng và bảo mật: API Gateway, CloudFront, AWS WAF.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc                                                                                                                                                                                | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- | ------------------ | ----------------- |
+| 2    | - Tìm hiểu kiến trúc Serverless trên AWS:<br />+ Khái niệm Serverless.<br />+ Ưu/nhược điểm so với máy chủ truyền thống.<br />+ Khám phá AWS Lambda.                | 25/06/2026       | 25/06/2026         |                   |
+| 3    | - Tìm hiểu các Database hỗ trợ Serverless:<br />+ Amazon DynamoDB.<br />+ Amazon Aurora Serverless.<br />+ Use cases cho từng loại DB.                                          | 26/06/2026       | 26/06/2026         |                   |
+| 4    | - Khởi tạo Amazon Aurora.<br />- Thử đóng gói toàn bộ dự án thành một lambda.                                                                                                  | 27/06/2026       | 27/06/2026         |                   |
+| 5    | - Tìm hiểu lớp biên mạng:<br />+ Amazon API Gateway.<br />+ Amazon CloudFront.<br />+ AWS WAF.<br />- Sử dụng CloudFormation để khởi tạo lớp biên mạng cho lambda đã làm. | 28/06/2026       | 28/06/2026         |                   |
 
 ### Kết quả đạt được tuần 4:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hiểu rõ khái niệm Serverless, cách tối ưu hóa chi phí và giảm bớt gánh nặng vận hành máy chủ.
+* Nắm được cơ chế hoạt động của AWS Lambda, cấu hình trigger, quyền thực thi.
+* Phân biệt được sự khác nhau giữa DynamoDB và Aurora Serverless, cũng như khi nào nên áp dụng loại nào cho dự án.
+* Triển khai thành công mô hình Serverless tất cả trong một.
+* Hiểu vai trò của các dịch vụ lớp biên:
+  * API Gateway:Đóng vai trò là cửa ngõ quản lý và định tuyến các API calls vào Lambda.
+  * CloudFront: Hỗ trợ phân phối nội dung đến người dùng cuối với độ trễ thấp nhất.
+  * AWS WAF: Cách hoạt động của tường lửa ứng dụng web để chặn các luồng traffic độc hại trước khi chúng chạm đến backend.
+* Có khả năng xâu chuỗi các dịch vụ: `End-user -> CloudFront -> API Gateway -> Lambda -> DynamoDB`.
