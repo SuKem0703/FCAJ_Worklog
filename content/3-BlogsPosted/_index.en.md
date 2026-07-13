@@ -6,17 +6,16 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+This section lists the blogs I have posted on the [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj).
 
-This section lists and introduces the blogs you have posted on [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). For example:
+### [Blog 1 — Using Amazon CloudFront to Accelerate and Optimize Request Processing](3.1-Blog1/)
 
-### [Blog 1 - Session Policies in Amazon EKS Pod Identity](3.1-Blog1/)
-This blog introduces Amazon EKS Pod Identity's newly added session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without creating multiple separate IAM roles. This is an important step toward applying the least privilege principle more effectively in large-scale Kubernetes environments.
+A deep dive into how Amazon CloudFront uses Edge Locations to cache and serve content globally, reducing latency, offloading origin servers, and improving user experience for web applications and APIs.
 
-### [Blog 2 - ...](3.2-Blog2/)
-This blog introduces Amazon EKS Pod Identity's newly added session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without creating multiple separate IAM roles. This is an important step toward applying the least privilege principle more effectively in large-scale Kubernetes environments.
+### [Blog 2 — Amazon EKS Now Supports Control Plane Egress Through Your VPC](3.2-Blog2/)
 
-### [Blog 3 - ...](3.3-Blog3/)
-This blog introduces Amazon EKS Pod Identity's newly added session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without creating multiple separate IAM roles. This is an important step toward applying the least privilege principle more effectively in large-scale Kubernetes environments.
+An overview of the new Customer-Routed Control Plane Egress feature in Amazon EKS, which allows Kubernetes control plane traffic to be routed through your own VPC for better security, monitoring, and compliance.
+
+### [Blog 3 — Building a Safer Multi-tenant AI System with Amazon Bedrock](3.3-Blog3/)
+
+How PAR Technology combines Amazon Bedrock with multi-layer security controls to build a multi-tenant AI system, ensuring each user can only access their authorized data.

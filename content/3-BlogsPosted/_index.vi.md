@@ -1,3 +1,5 @@
+b
+
 ---
 title: "Các bài blogs đã đăng"
 date: 2024-01-01
@@ -5,18 +7,16 @@ weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
+Danh sách các bài blog đã đăng trên nhóm [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj).
 
-{{% notice warning %}}  
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+### [Blog 1 — Sử dụng Amazon CloudFront để tăng tốc và tối ưu quá trình xử lý yêu cầu](3.1-Blog1/)
 
-Tại đây sẽ là phần liệt kê, giới thiệu các blogs mà các bạn đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). Ví dụ:
+Tìm hiểu cách Amazon CloudFront sử dụng Edge Locations để cache và phân phối nội dung toàn cầu, giúp giảm độ trễ, giảm tải cho origin server và cải thiện trải nghiệm người dùng.
 
-###  [Blog 1 - SESSION POLICIES TRONG AMAZON EKS POD IDENTITY](3.1-Blog1/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### [Blog 2 — Amazon EKS Hỗ Trợ Truyền Dữ Liệu Từ Control Plane Qua VPC Của Bạn](3.2-Blog2/)
 
-###  [Blog 2 - ...](3.2-Blog2/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Giới thiệu tính năng Customer-Routed Control Plane Egress của Amazon EKS, cho phép định tuyến lưu lượng Control Plane qua VPC riêng để tăng cường bảo mật, giám sát và tuân thủ.
 
-###  [Blog 3 - ...](3.3-Blog3/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### [Blog 3 — Xây dựng hệ thống AI đa người dùng an toàn hơn với Amazon Bedrock](3.3-Blog3/)
+
+Tìm hiểu cách PAR Technology kết hợp Amazon Bedrock với các lớp bảo mật để xây dựng hệ thống AI đa người dùng, đảm bảo mỗi người dùng chỉ truy cập được dữ liệu mà họ được phép.
