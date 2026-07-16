@@ -106,21 +106,22 @@ export const handler = async (event: EventBridgeEvent<'Scheduled Event', Mainten
 
 Với action `start_maintenance`:
 
-**Bật Maintenance Mode** — gọi API Gateway `UpdateStageCommand` set `maintenance=true`
-
-**Ghi flag DB** — upsert `SystemConfig.maintenance_mode = true`
-
-**Ghi CloudWatch Logs** — mỗi bước đều có log
+- **Bật Maintenance Mode** — gọi API Gateway `UpdateStageCommand` set `maintenance=true`
+- **Ghi flag DB** — upsert `SystemConfig.maintenance_mode = true`
+- **Ghi CloudWatch Logs** — mỗi bước đều có log
 
 Với action `vacuum_analyze`:
 
-**Kết nối Aurora PostgreSQL** — qua `ApplicationDbContext`
+**Tổng quan về VACUUM và ANALYZE:**
+- **VACUUM:** Do PostgreSQL sử dụng cơ chế kiểm soát đồng thời nhiều phiên bản (MVCC - Multi-Version Concurrency Control), khi các tác vụ `UPDATE` hoặc `DELETE` diễn ra, hệ thống không xóa vật lý các dữ liệu cũ ngay lập tức mà chỉ đánh dấu chúng là "dead tuples". Theo thời gian, điều này gây ra hiện tượng phình to dữ liệu (table bloat). Lệnh `VACUUM` được gọi để quét và thu hồi không gian lưu trữ từ các dead tuples này, giúp giải phóng dung lượng và duy trì tốc độ đọc/ghi ổ đĩa.
+- **ANALYZE:** Lệnh này có nhiệm vụ thu thập và cập nhật các số liệu thống kê (statistics) về phân bổ dữ liệu bên trong các bảng. Trình tối ưu hóa truy vấn (Query Planner) của PostgreSQL phụ thuộc hoàn toàn vào số liệu này để tính toán và đưa ra kế hoạch thực thi (execution plan) tối ưu nhất, giúp các truy vấn (queries) luôn giữ được tốc độ phản hồi nhanh, ngay cả khi lượng dữ liệu lớn dần.
+- Bằng cách kết hợp **VACUUM ANALYZE** và **REINDEX** (chống phân mảnh các chỉ mục) chạy tự động vào giờ thấp điểm, cơ sở dữ liệu luôn tự động làm sạch và duy trì hiệu năng ở mức cao nhất mà không cần can thiệp thủ công.
 
-**VACUUM ANALYZE** — từng table
-
-**REINDEX** — từng table
-
-**Ghi CloudWatch Logs** + Metrics
+**Các bước thực thi của Lambda:**
+- **Kết nối Aurora PostgreSQL** — qua `ApplicationDbContext`
+- **VACUUM ANALYZE** — lặp qua từng table
+- **REINDEX** — lặp qua từng table
+- **Ghi CloudWatch Logs** + Metrics
 
 #### 5.8.5 Xử lý Maintenance Mode
 

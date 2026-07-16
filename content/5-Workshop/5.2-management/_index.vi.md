@@ -160,22 +160,20 @@ Giả định Lượng tải và Thông số Hệ thống
 * Amazon SQS: ~2,000,000 requests cần xử lý bất đồng bộ, phát sinh tổng cộng 6,000,000 tác vụ SQS. Tỷ lệ lỗi đẩy vào hàng đợi DLQ ước tính <0.1%.
 * Amazon S3: ~10 GB.
 * Amazon CloudWatch Logs: ~10 GB nạp và lưu trữ log/tháng.
-* Amazon Aurora PostgreSQL & RDS Proxy: trung bình ở chạy mức 2 ACU 24/7.
+* Amazon Aurora PostgreSQL: trung bình ở chạy mức 2 ACU 24/7.
 
-| Service Name                           |           Monthly Cost (USD)           | Annual Cost (USD) |
-| :------------------------------------- | :-------------------------------------: | :---------------: |
-| Amazon Aurora PostgreSQL-Compatible DB |                  74.68                  |      896.16      |
-| Amazon RDS Proxy                       |                  26.28                  |      315.36      |
-| AWS Web Application Firewall (WAF)     |                  11.00                  |      132.00      |
-| Amazon CloudFront                      |                  10.25                  |      123.00      |
-| Amazon CloudWatch                      |                  7.05                  |       84.54       |
-| Amazon API Gateway                     |                  6.25                  |       75.00       |
-| AWS Lambda                             |                  4.33                  |       51.96       |
-| Amazon Simple Queue Service (SQS)      |                  3.00                  |       36.00       |
-| Amazon Route 53                        |                  0.90                  |       10.80       |
-| S3 Standard                            |                  0.51                  |       6.12       |
-| Data Transfer                          |                  0.00                  |       0.00       |
-| **Total**                        | **$134.30** | **$1,611.58** |                  |
+| Service Name                           | Monthly Cost (USD) | Annual Cost (USD) |
+| :------------------------------------- | :----------------: | :---------------: |
+| Amazon Aurora PostgreSQL-Compatible DB |       74.68       |      896.16      |
+| AWS Web Application Firewall (WAF)     |       11.00       |      132.00      |
+| Amazon CloudFront                      |       10.25       |      123.00      |
+| Amazon CloudWatch                      |        7.05        |       84.54       |
+| Amazon API Gateway                     |        6.25        |       75.00       |
+| AWS Lambda                             |        4.33        |       51.96       |
+| Amazon Simple Queue Service (SQS)      |        3.00        |       36.00       |
+| S3 Standard                            |        0.51        |       6.12       |
+| Data Transfer                          |        0.00        |       0.00       |
+| **Total**                        | **$117.07** |  **$1,404.78**  |
 
 ![Cost_Calculator](images/Cost_Calculator_1.png)
 

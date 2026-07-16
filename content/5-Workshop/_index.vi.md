@@ -5,8 +5,6 @@ weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-![1782935499173](image/_index.vi/1782935499173.png)
-
 # Nghiên cứu và Triển khai Hệ thống Máy chủ cho Trò chơi Trực tuyến
 
 #### Tổng quan

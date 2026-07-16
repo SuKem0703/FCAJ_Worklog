@@ -5,7 +5,7 @@ weight : 4
 chapter : false
 pre : " <b> 5.4. </b> "
 ---
-#### 5.4.1 Tổng quan kiú3
+#### 5.4.1 Tổng quan kiến trúc
 
 Kiến trúc hệ thống trước dự án trước khi triển khai:
 
